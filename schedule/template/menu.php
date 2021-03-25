@@ -1,7 +1,6 @@
 <?php
 ?>
-
-      <!-- Sidebar Menu -->
+<!-- Sidebar Menu -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">HEADER</li>
         <!-- Optionally, you can add icons to the links -->
@@ -19,5 +18,5 @@
           </ul>
         </li>
       </ul>
-      <!-- /.sidebar-menu -->
+<!-- /.sidebar-menu -->
 
