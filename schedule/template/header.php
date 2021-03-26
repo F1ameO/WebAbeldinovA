@@ -1,5 +1,4 @@
 <?php
-
 ?>
 
 <!DOCTYPE html>
@@ -47,7 +46,7 @@ desired effect
 |---------------------------------------------------------|
 |LAYOUT OPTIONS | fixed                                   |
 |               | layout-boxed                            |
-|               | layout-top-nav                          |
+|               | layout-top-nav                          
 |               | sidebar-collapse                        |
 |               | sidebar-mini                            |
 |---------------------------------------------------------|
@@ -58,7 +57,7 @@ desired effect
   <!-- Main Header -->
   <header class="main-header">
     <!-- Logo -->
-    <a href="index2.html" class="logo">
+    <a href="#" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>Р</b></span>
       <!-- logo for regular state and mobile devices -->
@@ -81,14 +80,16 @@ desired effect
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <!-- The user image in the navbar-->
               <!-- hidden-xs hides the username on small devices so only the image appears. -->
-              <span class="hidden-xs">Здраствуйте, <?= $_SESSION['fio'] = $user->fio; ?></span>
+              <?php 
+              ?>
+              <span class="hidden-xs">Здраствуйте, <?=$_SESSION["fio"]?></span>
             </a>
             <ul class="dropdown-menu">
               <!-- The user image in the menu -->
               <li class="user-header">
                 <p>
-                  <?= $_SESSION['fio'] = $user->fio; ?>
-                  <small><?= $_SESSION['roleName'] = $user->name; ?></small>
+                  <?=$_SESSION['fio']?>
+                  <small><?=$_SESSION['roleName']?></small>
                 </p>
               </li>
               <!-- Menu Body -->

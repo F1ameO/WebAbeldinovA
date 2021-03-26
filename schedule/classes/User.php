@@ -22,6 +22,14 @@ class User extends Table{
     public $role_id = 0;
     public $active = 1;
     function validate() {
-        return false;
-    }
+       if (!empty($this->lastname) &&
+        !empty($this->firstname) &&
+        !empty($this->login) &&
+        !empty($this->pass) &&
+        !empty($this->role_id) &&
+        !empty($this->gender_id)) {
+        return true;
+        }
+    return false;
+}
 }
