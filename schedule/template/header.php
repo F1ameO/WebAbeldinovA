@@ -88,7 +88,7 @@ desired effect
               <!-- The user image in the menu -->
               <li class="user-header">
                 <p>
-                  <?=$_SESSION['fio']?>
+                  <?=$_SESSION["fio"]?> - 
                   <small><?=$_SESSION['roleName']?></small>
                 </p>
               </li>

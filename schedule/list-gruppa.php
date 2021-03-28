@@ -18,36 +18,43 @@ require_once 'template/header.php';
 <section class="content-header">
 <h1><?=$header;?></h1>
 <ol class="breadcrumb">
-<li><a href="/index.php"><i class="fafa-dashboard"></i> Главная</a></li>
+<li><a href="/index.php"><i class="fa
+fa-dashboard"></i> Главная</a></li>
 <li class="active"><?=$header;?></li>
 </ol>
 </section>
 <div class="box-body">
+
 <a class="btn btn-success" href="add-gruppa.php">Добавить группу</a>
+
 </div>
 <div class="box-body">
 <?php
 if ($gruppas) {
 ?>
+
 <table id="example2" class="table table-bordered table-hover">
+
 <thead>
 <tr>
 <th>Название</th>
 <th>Специальность</th>
 <th>Дата образования</th>
 <th>Дата окончания</th>
+
 </tr>
 </thead>
 <tbody>
 <?php
 foreach ($gruppas as $gruppa) {
 echo '<tr>';
-echo '<td><a href="view-
-gruppa.php?id='.$gruppa->gruppa_id.'">'.$gruppa->name.'</a> '
-. '<a href="add-
-gruppa.php?id='.$gruppa->gruppa_id.'"><i class="fa fa-
-pencil"></i></a></td>';
+
+echo '<td><a href="view-gruppa.php?id='.$gruppa->gruppa_id.'">'.$gruppa->name.'</a> '
+
+. '<a href="add-gruppa.php?id='.$gruppa->gruppa_id.'"><i class="fa fa-pencil"></i></a></td>';
+
 echo '<td>'.$gruppa->special.'</td>';
+
 echo '<td>'.date("d.m.Y",
 strtotime($gruppa->date_begin)).'</td>';
 echo '<td>'.date("d.m.Y",
@@ -71,3 +78,4 @@ $size); ?>
 <?php
 require_once 'template/footer.php';
 ?>
+

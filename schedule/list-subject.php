@@ -9,7 +9,7 @@ $page = 1;
 $subjectMap = new SubjectMap();
 $count = $subjectMap->count();
 $subjects = $subjectMap->findAll($page*$size-$size, $size);
-$header = 'Список групп';
+$header = 'Список предметов';
 require_once 'template/header.php';
 ?>
 <div class="row">
@@ -60,7 +60,7 @@ echo '<td>'.$subject->hours.'</td>';
 </tbody>
 </table>
 <?php } else {
-echo 'Ни одной группы не найдено';
+echo 'Ни одного предмета не найдено';
 } ?>
 </div>
 <div class="box-body">

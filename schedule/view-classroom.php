@@ -3,7 +3,7 @@ require_once 'secure.php';
 if (isset($_GET['id'])) {
 $id = Helper::clearInt($_GET['id']);
 $classroom = (new ClassroomMap())->findViewById($id);
-$header = 'Просмотр аудитории';
+$header = 'Просмотр отдел';
 require_once 'template/header.php';
 ?>
 <div class="row">
@@ -13,17 +13,19 @@ require_once 'template/header.php';
 <h1><?=$header;?></h1>
 <ol class="breadcrumb">
 <li><a href="index.php"><i class="fafa-dashboard"></i> Главная</a></li>
-<li><a href="list-classroom.php">Отдел</a></li>
+<li><a href="list-classroom.php">Аудитория</a></li>
+
 <li class="active"><?=$header;?></li>
 </ol>
 </section>
 <div class="box-body">
+
 <a class="btn btn-success" href="add-classroom.php?id=<?=$id;?>">Изменить</a>
 </div>
 <div class="box-body">
 <table class="table table-bordered table-hover">
 <tr>
-<th>Номер аудитории</th>
+<th>Название</th>
 <td><?=$classroom->name;?></td>
 </tr>
 <tr>
@@ -36,3 +38,4 @@ require_once 'template/header.php';
 }
 require_once 'template/footer.php';
 ?>
+

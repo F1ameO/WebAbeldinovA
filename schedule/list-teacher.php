@@ -3,13 +3,13 @@ require_once 'secure.php';
 $size = 1;
 if (isset($_GET['page'])) {
 $page = Helper::clearInt($_GET['page']);
+
 } else {
 $page = 1;
 }
 $teacherMap = new TeacherMap();
 $count = $teacherMap->count();
-$teachers = $teacherMap->findAll($page*$size-$size,
-$size);
+$teachers = $teacherMap->findAll($page*$size-$size, $size);
 $header = 'Список преподавателей';
 require_once 'template/header.php';
 ?>
@@ -26,15 +26,18 @@ fa-dashboard"></i> Главная</a></li>
 </ol>
 </section>
 <div class="box-body">
+
 <a class="btn btn-success" href="add-teacher.php">Добавить преподавателя</a>
 
 </div>
 <!-- /.box-header -->
 <div class="box-body">
 <?php
-if ($teachers) {
+if($teachers) {
 ?>
+
 <table id="example2" class="table table-bordered table-hover">
+
 <thead>
 <tr>
 <th>Ф.И.О</th>
@@ -48,25 +51,24 @@ if ($teachers) {
 <?php
 foreach ($teachers as $teacher) {
 echo '<tr>';
-echo '<td><a href="profile-teacher.php?id='.$teacher->user_id.'">'.$teacher->fio.'</a> '
-. '<a href="add-teacher.php?id='.$teacher->user_id.'"><i class="fa fa-pencil"></i></a></td>';
+
+echo '<td><a href="profile-teacher.php?id='.$teacher->user_id.'">'.$teacher->fio.'</a> '. '<a href="add-teacher.php?id='.$teacher->user_id.'"><i class="fa fa-pencil"></i></a></td>';
 echo '<td>'.$teacher->gender.'</td>';
 echo '<td>'.$teacher->birthday.'</td>';
 echo '<td>'.$teacher->otdel.'</td>';
 echo '<td>'.$teacher->role.'</td>';
 echo '</tr>';
+
 }
 ?>
 </tbody>
 </table>
 <?php } else {
-echo 'Ни одного преподавателя не
-найдено';
+echo 'Ни одного преподавателя не найдено';
 } ?>
 </div>
 <div class="box-body">
-<?php Helper::paginator($count, $page,
-$size); ?>
+<?php Helper::paginator($count, $page, $size); ?>
 </div>
 <!-- /.box-body -->
 </div>
@@ -75,3 +77,4 @@ $size); ?>
 <?php
 require_once 'template/footer.php';
 ?>
+

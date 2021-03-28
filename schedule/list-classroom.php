@@ -8,8 +8,8 @@ $page = 1;
 }
 $classroomMap = new ClassroomMap();
 $count = $classroomMap->count();
-$arrClassroom = $classroomMap->findAll($page*$size-$size, $size);
-$header = 'Список Аудиторий';
+$arrClassrooms = $classroomMap->findAll($page*$size-$size, $size);
+$header = 'Список аудиторий';
 require_once 'template/header.php';
 ?>
 <div class="row">
@@ -27,7 +27,7 @@ require_once 'template/header.php';
 </div>
 <div class="box-body">
 <?php
-if ($arrClassroom) {
+if ($arrClassrooms) {
 ?>
 <table id="example2" class="table table-bordered table-hover">
 <thead>
@@ -37,11 +37,10 @@ if ($arrClassroom) {
 </thead>
 <tbody>
 <?php
-foreach ($arrClassroom as $classroom) {
+foreach ($arrClassrooms as $classroom) {
 echo '<tr>';
 echo '<td><a href="view-classroom.php?id='.$classroom->classroom_id.'">'.$classroom->name.'</a> '
 . '<a href="add-classroom.php?id='.$classroom->classroom_id.'"><i class="fa fa-pencil"></i></a></td>';
-echo '</tr>';
 }
 ?>
 </tbody>
@@ -60,3 +59,4 @@ $size); ?>
 <?php
 require_once 'template/footer.php';
 ?>
+

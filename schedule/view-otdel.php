@@ -3,7 +3,7 @@ require_once 'secure.php';
 if (isset($_GET['id'])) {
 $id = Helper::clearInt($_GET['id']);
 $otdel = (new OtdelMap())->findViewById($id);
-$header = 'Просмотр отдел';
+$header = 'Просмотр отделов';
 require_once 'template/header.php';
 ?>
 <div class="row">

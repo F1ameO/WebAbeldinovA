@@ -12,8 +12,11 @@ require_once 'template/header.php';
 <section class="content-header">
 <h1><?=$header;?></h1>
 <ol class="breadcrumb">
-<li><a href="index.php"><i class="fafa-dashboard"></i> Главная</a></li>
-<li><a href="list-gruppa.php">Группы</a></li>
+<li><a href="index.php"><i class="fa
+fa-dashboard"></i> Главная</a></li>
+
+<li><a href="list-
+gruppa.php">Группы</a></li>
 
 <li class="active"><?=$header;?></li>
 </ol>
@@ -21,22 +24,30 @@ require_once 'template/header.php';
 <div class="box-body">
 
 <a class="btn btn-success" href="add-gruppa.php?id=<?=$id;?>">Изменить</a>
+
 </div>
 <div class="box-body">
-<table class="table table-bordered table-hover">
+
+<table class="table table-bordered table-
+hover">
+
 <tr>
 <th>Название</th>
+
 <td><?=$gruppa->name;?></td>
+
 </tr>
 <tr>
+
 <th>Специальность</th>
+
 <td><?=$gruppa->special;?></td>
+
 </tr>
 <tr>
 
 <th>Дата образования</th>
-<td><?=date("d.m.Y",
-strtotime($gruppa->date_begin));?></td>
+<td><?=date("d.m.Y", strtotime($gruppa->date_begin));?></td>
 </tr>
 <tr>
 <th>Дата окончания</th>
@@ -51,3 +62,4 @@ strtotime($gruppa->date_begin));?></td>
 }
 require_once 'template/footer.php';
 ?>
+
