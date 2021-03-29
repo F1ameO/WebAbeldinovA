@@ -1,6 +1,10 @@
 <?php
 $header = 'Расписание и планы преподавателей';
 require_once 'secure.php';
+if (!Helper::can('admin') && !Helper::can('manager')) {
+header('Location: 404.php');
+exit();
+}
 require_once 'template/header.php';
 $size = 5;
 if (isset($_GET['page'])) {
